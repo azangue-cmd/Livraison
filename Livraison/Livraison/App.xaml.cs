@@ -10,7 +10,7 @@ namespace Livraison
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ListCommnade();
         }
 
         protected override void OnStart()

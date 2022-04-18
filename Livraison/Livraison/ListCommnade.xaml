@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:Locall="clr-namespace:Livraison"
+             x:Class="Livraison.ListCommnade">
+    <ContentPage.BindingContext>
+        <Locall:MainViewModel></Locall:MainViewModel>
+    </ContentPage.BindingContext>
+
+    <ListView ItemsSource="{Binding Commande}" HasUnevenRows="True" ItemTapped="ListView_ItemTapped">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="1.5*"/>
+                                    <RowDefinition Height="1.5*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="3" VerticalOptions="Center" Source="{Binding ImageUrl}"/>
+                                <Label Text="{Binding NameCommande}" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Center"/>
+                                <Label Text="{Binding Reference}" Grid.Row="1" Grid.Column="1" FontAttributes="Italic" VerticalOptions="Start"/>
+                                <Label Text="{Binding Desciption}" Grid.Row="2" Grid.Column="1" FontAttributes="Italic" VerticalOptions="Start"/>
+                                <Label Text="{Binding LieuLivraison}" Grid.Row="3" Grid.Column="1" FontAttributes="Italic" VerticalOptions="Start"/>
+                                <Label Text="{Binding NomClient}" Grid.Row="4" Grid.Column="1" FontAttributes="Italic" VerticalOptions="Start"/>
+                                <Label Text="{Binding TelephoneClient}" Grid.Row="5" Grid.Column="1" FontAttributes="Italic" VerticalOptions="Start"/>
+
+                                <Image Source="{Binding CollImage}" Grid.Row="2" Grid.Column="2"/>
+                                <Image Source="{Binding ExpImage}" Grid.Row="2" Grid.Column="2"/>
+
+                            </Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+        
+    
+</ContentPage>
